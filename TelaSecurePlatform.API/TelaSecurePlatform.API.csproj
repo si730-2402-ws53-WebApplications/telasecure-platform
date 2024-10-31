@@ -7,7 +7,15 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="EntityFrameworkCore.CreatedUpdatedDate" Version="8.0.0" />
+        <PackageReference Include="Humanizer" Version="3.0.0-beta.54" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0-rc.2.24474.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.0-rc.2.24474.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational.Design" Version="2.0.0-preview1-final" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0-rc.2.24473.5" />
+        <PackageReference Include="MySql.EntityFrameworkCore" Version="9.0.0-preview" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.9.0" />
     </ItemGroup>
 
 </Project>
