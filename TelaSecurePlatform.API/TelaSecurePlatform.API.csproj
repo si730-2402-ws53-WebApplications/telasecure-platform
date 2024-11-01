@@ -23,7 +23,9 @@
       <Folder Include="Evironment\Application\Internal\QueryServices\" />
       <Folder Include="Evironment\Domain\Model\Aggregates\" />
       <Folder Include="Evironment\Domain\Model\Commands\" />
+      <Folder Include="Evironment\Domain\Model\Entities\" />
       <Folder Include="Evironment\Domain\Model\Queries\" />
+      <Folder Include="Evironment\Domain\Model\ValueObjects\" />
       <Folder Include="Evironment\Domain\Repositories\" />
       <Folder Include="Evironment\Domain\Services\" />
       <Folder Include="Evironment\Infrastructure\" />
@@ -32,7 +34,9 @@
       <Folder Include="Facilities\Application\Internal\QueryServices\" />
       <Folder Include="Facilities\Domain\Model\Aggregates\" />
       <Folder Include="Facilities\Domain\Model\Commands\" />
+      <Folder Include="Facilities\Domain\Model\Entities\" />
       <Folder Include="Facilities\Domain\Model\Queries\" />
+      <Folder Include="Facilities\Domain\Model\ValueObjects\" />
       <Folder Include="Facilities\Domain\Repositories\" />
       <Folder Include="Facilities\Domain\Services\" />
       <Folder Include="Facilities\Infrastructure\" />
@@ -41,7 +45,9 @@
       <Folder Include="Inventory\Application\Internal\QueryServices\" />
       <Folder Include="Inventory\Domain\Model\Aggregates\" />
       <Folder Include="Inventory\Domain\Model\Commands\" />
+      <Folder Include="Inventory\Domain\Model\Entities\" />
       <Folder Include="Inventory\Domain\Model\Queries\" />
+      <Folder Include="Inventory\Domain\Model\ValueObjects\" />
       <Folder Include="Inventory\Domain\Repositories\" />
       <Folder Include="Inventory\Domain\Services\" />
       <Folder Include="Inventory\Infrastructure\" />
@@ -50,7 +56,9 @@
       <Folder Include="Reports\Application\Internal\QueryServices\" />
       <Folder Include="Reports\Domain\Model\Aggregates\" />
       <Folder Include="Reports\Domain\Model\Commands\" />
+      <Folder Include="Reports\Domain\Model\Entities\" />
       <Folder Include="Reports\Domain\Model\Queries\" />
+      <Folder Include="Reports\Domain\Model\ValueObjects\" />
       <Folder Include="Reports\Domain\Repositories\" />
       <Folder Include="Reports\Domain\Services\" />
       <Folder Include="Reports\Infrastructure\" />
