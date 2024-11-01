@@ -7,7 +7,54 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="EntityFrameworkCore.CreatedUpdatedDate" Version="8.0.0" />
+        <PackageReference Include="Humanizer" Version="3.0.0-beta.54" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0-rc.2.24474.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.0-rc.2.24474.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational.Design" Version="2.0.0-preview1-final" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0-rc.2.24473.5" />
+        <PackageReference Include="MySql.EntityFrameworkCore" Version="9.0.0-preview" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.9.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Evironment\Application\Internal\CommandServices\" />
+      <Folder Include="Evironment\Application\Internal\QueryServices\" />
+      <Folder Include="Evironment\Domain\Model\Aggregates\" />
+      <Folder Include="Evironment\Domain\Model\Commands\" />
+      <Folder Include="Evironment\Domain\Model\Queries\" />
+      <Folder Include="Evironment\Domain\Repositories\" />
+      <Folder Include="Evironment\Domain\Services\" />
+      <Folder Include="Evironment\Infrastructure\" />
+      <Folder Include="Evironment\Interfaces\" />
+      <Folder Include="Facilities\Application\Internal\CommandServices\" />
+      <Folder Include="Facilities\Application\Internal\QueryServices\" />
+      <Folder Include="Facilities\Domain\Model\Aggregates\" />
+      <Folder Include="Facilities\Domain\Model\Commands\" />
+      <Folder Include="Facilities\Domain\Model\Queries\" />
+      <Folder Include="Facilities\Domain\Repositories\" />
+      <Folder Include="Facilities\Domain\Services\" />
+      <Folder Include="Facilities\Infrastructure\" />
+      <Folder Include="Facilities\Interfaces\" />
+      <Folder Include="Inventory\Application\Internal\CommandServices\" />
+      <Folder Include="Inventory\Application\Internal\QueryServices\" />
+      <Folder Include="Inventory\Domain\Model\Aggregates\" />
+      <Folder Include="Inventory\Domain\Model\Commands\" />
+      <Folder Include="Inventory\Domain\Model\Queries\" />
+      <Folder Include="Inventory\Domain\Repositories\" />
+      <Folder Include="Inventory\Domain\Services\" />
+      <Folder Include="Inventory\Infrastructure\" />
+      <Folder Include="Inventory\Interfaces\" />
+      <Folder Include="Reports\Application\Internal\CommandServices\" />
+      <Folder Include="Reports\Application\Internal\QueryServices\" />
+      <Folder Include="Reports\Domain\Model\Aggregates\" />
+      <Folder Include="Reports\Domain\Model\Commands\" />
+      <Folder Include="Reports\Domain\Model\Queries\" />
+      <Folder Include="Reports\Domain\Repositories\" />
+      <Folder Include="Reports\Domain\Services\" />
+      <Folder Include="Reports\Infrastructure\" />
+      <Folder Include="Reports\Interfaces\" />
     </ItemGroup>
 
 </Project>
