@@ -40,17 +40,9 @@
       <Folder Include="Inventory\Domain\Model\Entities\" />
       <Folder Include="Inventory\Domain\Model\ValueObjects\" />
       <Folder Include="Inventory\Infrastructure\Persistence\EFC\" />
-      <Folder Include="Reports\Application\Internal\CommandServices\" />
-      <Folder Include="Reports\Application\Internal\QueryServices\" />
-      <Folder Include="Reports\Domain\Model\Aggregates\" />
-      <Folder Include="Reports\Domain\Model\Commands\" />
-      <Folder Include="Reports\Domain\Model\Entities\" />
-      <Folder Include="Reports\Domain\Model\Queries\" />
-      <Folder Include="Reports\Domain\Model\ValueObjects\" />
-      <Folder Include="Reports\Domain\Repositories\" />
-      <Folder Include="Reports\Domain\Services\" />
-      <Folder Include="Reports\Infrastructure\" />
-      <Folder Include="Reports\Interfaces\" />
+      <Folder Include="Reports\Infrastructure\Persistence\" />
+      <Folder Include="Reports\Interfaces\REST\Resources\" />
+      <Folder Include="Reports\Interfaces\REST\Transform\" />
     </ItemGroup>
 
 </Project>
