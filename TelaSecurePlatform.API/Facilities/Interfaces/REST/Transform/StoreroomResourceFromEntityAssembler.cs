@@ -7,6 +7,6 @@ public static class StoreroomResourceFromEntityAssembler
 {
     public static StoreroomResource ToResourceFromEntity(Storeroom entity)
     {
-        return new StoreroomResource(entity.Id, entity.Name, entity.Description, entity.Location, entity.Capacity, entity.Phone, entity.Email, entity.ActualTemperature, entity.MaximumTemperature, entity.MinimumTemperature, entity.TemperatureUnit, entity.ActualHumidity, entity.MaximumHumidity, entity.MinimumHumidity, entity.HumidityUnit);
+        return new StoreroomResource(entity.Id, entity.Name, entity.Description, entity.Location, entity.Capacity, entity.Contact, entity.Temperature, entity.Humidity);
     }
 }

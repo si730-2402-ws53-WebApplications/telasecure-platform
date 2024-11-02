@@ -1,3 +1,5 @@
-﻿namespace TelaSecurePlatform.API.Facilities.Interfaces.REST.Resources;
+﻿using TelaSecurePlatform.API.Facilities.Domain.Model.ValueObjects;
 
-public record StoreroomResource(int Id, string Name, string Location, string Description, int Capacity, string Phone, string Email, int ActualTemperature, int MaximumTemperature, int MinimumTemperature, string TemperatureUnit, int ActualHumidity, int MaximumHumidity, int MinimumHumidity, string HumidityUnit);
+namespace TelaSecurePlatform.API.Facilities.Interfaces.REST.Resources;
+
+public record StoreroomResource(int Id, string Name, string Location, string Description, int Capacity, Contact Contact, Temperature Temperature, Humidity Humidity);

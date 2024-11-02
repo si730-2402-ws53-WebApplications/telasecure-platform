@@ -35,8 +35,6 @@
       <Folder Include="Evironment\Domain\Services\" />
       <Folder Include="Evironment\Infrastructure\" />
       <Folder Include="Evironment\Interfaces\" />
-      <Folder Include="Facilities\Application\Internal\CommandServices\" />
-      <Folder Include="Facilities\Application\Internal\QueryServices\" />
       <Folder Include="Facilities\Domain\Model\Entities\" />
       <Folder Include="Facilities\Interfaces\ACL\" />
       <Folder Include="Inventory\Domain\Model\Entities\" />

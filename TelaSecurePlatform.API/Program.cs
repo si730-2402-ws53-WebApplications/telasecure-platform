@@ -1,4 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using TelaSecurePlatform.API.Facilities.Application.Internal.CommandServices;
+using TelaSecurePlatform.API.Facilities.Application.Internal.QueryServices;
+using TelaSecurePlatform.API.Facilities.Domain.Repositories;
+using TelaSecurePlatform.API.Facilities.Domain.Services;
+using TelaSecurePlatform.API.Facilities.Infrastructure.Persistence.EFC.Repositories;
 using TelaSecurePlatform.API.Inventory.Application.Internal.CommandServices;
 using TelaSecurePlatform.API.Inventory.Application.Internal.QueryServices;
 using TelaSecurePlatform.API.Inventory.Domain.Repositories;
@@ -52,6 +57,10 @@ builder.Services.AddScoped<IFabricRepository, FabricRepository>();
 builder.Services.AddScoped<IFabricCommandService, FabricCommandService>();
 builder.Services.AddScoped<IFabricQueryService, FabricQueryService>();
 
+//facilities bounded context
+builder.Services.AddScoped<IStoreroomRepository, StoreroomRepository>();
+builder.Services.AddScoped<IStoreroomCommandService, StoreroomCommandService>();
+builder.Services.AddScoped<IStoreroomQueryService, StoreroomQueryService>();
 
 
 var app = builder.Build();
