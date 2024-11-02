@@ -62,6 +62,14 @@ builder.Services.AddScoped<IStoreroomRepository, StoreroomRepository>();
 builder.Services.AddScoped<IStoreroomCommandService, StoreroomCommandService>();
 builder.Services.AddScoped<IStoreroomQueryService, StoreroomQueryService>();
 
+builder.Services.AddScoped<IClimateSensorRepository, ClimateSensorRepository>();
+builder.Services.AddScoped<IClimateSensorCommandService, ClimateSensorCommandService>();
+builder.Services.AddScoped<IClimateSensorQueryService, ClimateSensorQueryService>();
+
+builder.Services.AddScoped<IEnviroDeviceRepository, EnviroDeviceRepository>();
+builder.Services.AddScoped<IEnviroDeviceCommandService, EnviroDeviceCommandService>();
+builder.Services.AddScoped<IEnviroDeviceQueryService, EnviroDeviceQueryService>();
+
 
 var app = builder.Build();
 
