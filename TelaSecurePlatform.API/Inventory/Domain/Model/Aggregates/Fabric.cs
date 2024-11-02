@@ -18,3 +18,4 @@ public class Fabric
         Quantity = quantity;
     }
 }
+                   
