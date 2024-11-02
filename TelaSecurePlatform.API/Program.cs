@@ -1,4 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using TelaSecurePlatform.API.Facilities.Application.Internal.CommandServices;
+using TelaSecurePlatform.API.Facilities.Application.Internal.QueryServices;
+using TelaSecurePlatform.API.Facilities.Domain.Repositories;
+using TelaSecurePlatform.API.Facilities.Domain.Services;
+using TelaSecurePlatform.API.Facilities.Infrastructure.Persistence.EFC.Repositories;
 using TelaSecurePlatform.API.Inventory.Application.Internal.CommandServices;
 using TelaSecurePlatform.API.Inventory.Application.Internal.QueryServices;
 using TelaSecurePlatform.API.Inventory.Domain.Repositories;
@@ -52,6 +57,18 @@ builder.Services.AddScoped<IFabricRepository, FabricRepository>();
 builder.Services.AddScoped<IFabricCommandService, FabricCommandService>();
 builder.Services.AddScoped<IFabricQueryService, FabricQueryService>();
 
+//facilities bounded context
+builder.Services.AddScoped<IStoreroomRepository, StoreroomRepository>();
+builder.Services.AddScoped<IStoreroomCommandService, StoreroomCommandService>();
+builder.Services.AddScoped<IStoreroomQueryService, StoreroomQueryService>();
+
+builder.Services.AddScoped<IClimateSensorRepository, ClimateSensorRepository>();
+builder.Services.AddScoped<IClimateSensorCommandService, ClimateSensorCommandService>();
+builder.Services.AddScoped<IClimateSensorQueryService, ClimateSensorQueryService>();
+
+builder.Services.AddScoped<IEnviroDeviceRepository, EnviroDeviceRepository>();
+builder.Services.AddScoped<IEnviroDeviceCommandService, EnviroDeviceCommandService>();
+builder.Services.AddScoped<IEnviroDeviceQueryService, EnviroDeviceQueryService>();
 
 
 var app = builder.Build();
