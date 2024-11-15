@@ -2,7 +2,7 @@
 
 namespace TelaSecurePlatform.API.Facilities.Domain.Model.Aggregates;
 
-public class EnviroDevice
+public class EnvironmentDevice
 {
     public int Id { get; }
     public string Name { get; private set; }
@@ -12,11 +12,11 @@ public class EnviroDevice
     public string Unit { get; private set; }
     public string StoreRoomId { get; private set; }
     
-    public EnviroDevice()
+    public EnvironmentDevice()
     {
     }
     
-    public EnviroDevice(string name, string model, int value, string type, string unit, string storeRoomId)
+    public EnvironmentDevice(string name, string model, int value, string type, string unit, string storeRoomId)
     {
         Name = name;
         Model = model;
@@ -26,7 +26,7 @@ public class EnviroDevice
         StoreRoomId = storeRoomId;
     }
 
-    public EnviroDevice(CreateEnviroDeviceCommand command)
+    public EnvironmentDevice(CreateEnvironmentDeviceCommand command)
     {
         Name = command.Name;
         Model = command.Model;
@@ -34,5 +34,15 @@ public class EnviroDevice
         Type = command.Type;
         Unit = command.Unit;
         StoreRoomId = command.StoreRoomId;
+    }
+    
+    public void UpdateInformation(string name, string model, int value, string type, string unit, string storeRoomId)
+    {
+        Name = name;
+        Model = model;
+        Value = value;
+        Type = type;
+        Unit = unit;
+        StoreRoomId = storeRoomId;
     }
 }

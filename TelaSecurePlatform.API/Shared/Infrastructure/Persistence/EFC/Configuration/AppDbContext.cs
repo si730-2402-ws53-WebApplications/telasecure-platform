@@ -45,17 +45,17 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
         builder.Entity<ClimateSensor>().Property(f => f.Image).IsRequired();
         builder.Entity<ClimateSensor>().Property(f => f.StoreRoomId).IsRequired();
         
-        /*
-        builder.Entity<EnviroDevice>().HasKey(e => e.Id);
-        builder.Entity<EnviroDevice>().Property(e => e.Id).IsRequired().ValueGeneratedOnAdd();
-        builder.Entity<EnviroDevice>().Property(e => e.Name).IsRequired();
-        builder.Entity<EnviroDevice>().Property(e => e.Model).IsRequired();
-        builder.Entity<EnviroDevice>().Property(e => e.Type).IsRequired();
-        builder.Entity<EnviroDevice>().Property(e => e.Unit).IsRequired();
-        builder.Entity<EnviroDevice>().Property(e => e.Value).IsRequired();
-        builder.Entity<EnviroDevice>().Property(e => e.StoreRoomId).IsRequired();
-        builder.Entity<EnviroDevice>().Property(e => e.Status).IsRequired();
-        */
+        
+        builder.Entity<EnvironmentDevice>().HasKey(e => e.Id);
+        builder.Entity<EnvironmentDevice>().Property(e => e.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<EnvironmentDevice>().Property(e => e.Name).IsRequired();
+        builder.Entity<EnvironmentDevice>().Property(e => e.Model).IsRequired();
+        builder.Entity<EnvironmentDevice>().Property(e => e.Type).IsRequired();
+        builder.Entity<EnvironmentDevice>().Property(e => e.Unit).IsRequired();
+        builder.Entity<EnvironmentDevice>().Property(e => e.Value).IsRequired();
+        builder.Entity<EnvironmentDevice>().Property(e => e.StoreRoomId).IsRequired();
+        //builder.Entity<EnvironmentDevice>().Property(e => e.Status).IsRequired();
+        
         
         builder.UseSnakeCaseNamingConvention();
     }

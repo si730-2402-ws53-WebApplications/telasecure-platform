@@ -66,9 +66,9 @@ builder.Services.AddScoped<IClimateSensorRepository, ClimateSensorRepository>();
 builder.Services.AddScoped<IClimateSensorCommandService, ClimateSensorCommandService>();
 builder.Services.AddScoped<IClimateSensorQueryService, ClimateSensorQueryService>();
 
-builder.Services.AddScoped<IEnviroDeviceRepository, EnviroDeviceRepository>();
-builder.Services.AddScoped<IEnviroDeviceCommandService, EnviroDeviceCommandService>();
-builder.Services.AddScoped<IEnviroDeviceQueryService, EnviroDeviceQueryService>();
+builder.Services.AddScoped<IEnvironmentDeviceRepository, EnvironmentDeviceRepository>();
+builder.Services.AddScoped<IEnvironmentDeviceCommandService, EnvironmentDeviceCommandService>();
+builder.Services.AddScoped<IEnvironmentDeviceQueryService, EnvironmentDeviceQueryService>();
 
 
 var app = builder.Build();

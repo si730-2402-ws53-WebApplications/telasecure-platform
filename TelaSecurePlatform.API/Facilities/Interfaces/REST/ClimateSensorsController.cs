@@ -73,7 +73,7 @@ public class ClimateSensorsController(IClimateSensorCommandService climateSensor
     
  
     
-    [HttpDelete]
+    [HttpDelete ("{climateSensorId:int}")]
     [SwaggerOperation("Delete climate sensor", "Delete a climate sensor", OperationId = "DeleteClimateSensor")]
     [SwaggerResponse(200, "Climate sensor deleted")]
     [SwaggerResponse(404, "Climate sensor not found")]
