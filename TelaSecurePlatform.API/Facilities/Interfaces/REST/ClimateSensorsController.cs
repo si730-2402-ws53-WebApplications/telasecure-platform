@@ -44,6 +44,20 @@ public class ClimateSensorsController(IClimateSensorCommandService climateSensor
         return CreatedAtAction(nameof(GetClimateSensorById), new {climateSensorId = climateSensor.Id}, climateSensorResource);
     }
     
+       
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id, UpdateClimateSensorResource resource)
+    {
+        var updateClimateSensorCommand = UpdateClimateSensorCommandFromResourceAssembler.ToCommandFromResource(id, resource);
+        var updatedSensor = await climateSensorCommandService.Handle(updateClimateSensorCommand);
+        if (updatedSensor == null)
+        {
+            return NotFound();
+        }
+
+        return Ok(updatedSensor);
+    }
+    
     
     [HttpGet]
     [SwaggerOperation("Get all climate sensors", "Get all climate sensors", OperationId = "GetAllClimateSensors")]
@@ -57,6 +71,7 @@ public class ClimateSensorsController(IClimateSensorCommandService climateSensor
         return Ok(climateSensorResources);
     }
     
+ 
     
     [HttpDelete]
     [SwaggerOperation("Delete climate sensor", "Delete a climate sensor", OperationId = "DeleteClimateSensor")]

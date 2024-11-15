@@ -11,6 +11,7 @@ public class ClimateSensorCommandService(
     IUnitOfWork unitOfWork) 
     : IClimateSensorCommandService
 {
+    //crear climate sensor
     public async Task<ClimateSensor?> Handle(CreateClimateSensorCommand command)
     {
         var climateSensor = new ClimateSensor(command);
@@ -31,6 +32,24 @@ public class ClimateSensorCommandService(
         }
     }
     
+    //actualizar
+    public async Task<ClimateSensor?> Handle(UpdateClimateSensorCommand command)
+    {
+        var sensor = await climateSensorRepository.FindByIdAsync(command.ClimateSensorId);
+        if (sensor == null) return null;
+
+        try
+        {
+            sensor.UpdateInformation(command.Name, command.Model, command.Type, command.Image, command.StoreRoomId);
+            climateSensorRepository.Update(sensor);
+            await unitOfWork.CompleteAsync();
+            return sensor;
+        }
+        catch (Exception e)
+        {
+            return null;
+        }
+    }
     
     //eliminar
     public async Task<bool> Handle(DeleteClimateSensorCommand command)

@@ -6,6 +6,6 @@ namespace TelaSecurePlatform.API.Facilities.Domain.Services;
 public interface IClimateSensorCommandService
 {
     Task<ClimateSensor?> Handle(CreateClimateSensorCommand command);
-    
+    Task<ClimateSensor?> Handle(UpdateClimateSensorCommand command);
     Task<bool> Handle(DeleteClimateSensorCommand command);
 }

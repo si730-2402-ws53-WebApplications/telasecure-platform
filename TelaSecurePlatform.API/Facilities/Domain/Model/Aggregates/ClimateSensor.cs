@@ -32,4 +32,13 @@ public class ClimateSensor
         Image = command.Image;
         StoreRoomId = command.StoreroomId;
     }
+    
+    public void UpdateInformation(string name, string model, string type, string image, string storeRoomId)
+    {
+        Name = name;
+        Model = model;
+        Type = type;
+        Image = image;
+        StoreRoomId = storeRoomId;
+    }
 }
