@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Swashbuckle.AspNetCore.Annotations;
+using TelaSecurePlatform.API.Facilities.Domain.Model.Commands;
 using TelaSecurePlatform.API.Facilities.Domain.Model.Queries;
 using TelaSecurePlatform.API.Facilities.Domain.Services;
 using TelaSecurePlatform.API.Facilities.Interfaces.REST.Resources;
@@ -52,7 +53,20 @@ public class ClimateSensorsController(IClimateSensorCommandService climateSensor
     {
         var getAllClimateSensorsQuery = new GetAllClimateSensorsQuery();
         var climateSensors = await climateSensorQueryService.Handle(getAllClimateSensorsQuery);
-        var climateSensorResources = ClimateSensorResourceFromEntityAssembler.ToResourceFromEntity;
+        var climateSensorResources = climateSensors.Select(ClimateSensorResourceFromEntityAssembler.ToResourceFromEntity);
         return Ok(climateSensorResources);
+    }
+    
+    
+    [HttpDelete]
+    [SwaggerOperation("Delete climate sensor", "Delete a climate sensor", OperationId = "DeleteClimateSensor")]
+    [SwaggerResponse(200, "Climate sensor deleted")]
+    [SwaggerResponse(404, "Climate sensor not found")]
+    public async Task<IActionResult> DeleteClimateSensor(int climateSensorId)
+    {
+        var deleteClimateSensorCommand = new DeleteClimateSensorCommand(climateSensorId);
+        var climateSensorDeleted = await climateSensorCommandService.Handle(deleteClimateSensorCommand);
+        if (!climateSensorDeleted) return NotFound();
+        return Ok();
     }
 }

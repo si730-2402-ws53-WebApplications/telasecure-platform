@@ -14,6 +14,11 @@ public class ClimateSensorCommandService(
     public async Task<ClimateSensor?> Handle(CreateClimateSensorCommand command)
     {
         var climateSensor = new ClimateSensor(command);
+        
+        //se aplica el constrain para la creacion
+        var exists = await climateSensorRepository.FindByNameAndStoreRoomIdAsync(climateSensor.Name, climateSensor.StoreRoomId);
+        if (exists) return null;
+        
         try
         {
             await climateSensorRepository.AddAsync(climateSensor);
@@ -23,6 +28,28 @@ public class ClimateSensorCommandService(
         catch (Exception e)
         {
             return null;
+        }
+    }
+    
+    
+    //eliminar
+    public async Task<bool> Handle(DeleteClimateSensorCommand command)
+    {
+        try
+        {
+            var climateSensor = await climateSensorRepository.FindByIdAsync(command.ClimateSensorId);
+            if (climateSensor == null)
+            {
+                return false;
+            }
+
+            climateSensorRepository.Remove(climateSensor);
+            await unitOfWork.CompleteAsync();
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
         }
     }
 }
