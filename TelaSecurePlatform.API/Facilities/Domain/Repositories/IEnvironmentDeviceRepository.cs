@@ -3,7 +3,7 @@ using TelaSecurePlatform.API.Shared.Domain.Repositories;
 
 namespace TelaSecurePlatform.API.Facilities.Domain.Repositories;
 
-public interface IEnviroDeviceRepository : IBaseRepository<EnviroDevice>
+public interface IEnvironmentDeviceRepository : IBaseRepository<EnvironmentDevice>
 {
-    
+    Task<bool> FindByNameAndStoreRoomIdAsync(string name, string storeRoomId);
 }

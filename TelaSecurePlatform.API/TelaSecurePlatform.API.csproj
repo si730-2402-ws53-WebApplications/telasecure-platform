@@ -24,17 +24,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Evironment\Application\Internal\CommandServices\" />
-      <Folder Include="Evironment\Application\Internal\QueryServices\" />
-      <Folder Include="Evironment\Domain\Model\Aggregates\" />
-      <Folder Include="Evironment\Domain\Model\Commands\" />
-      <Folder Include="Evironment\Domain\Model\Entities\" />
-      <Folder Include="Evironment\Domain\Model\Queries\" />
-      <Folder Include="Evironment\Domain\Model\ValueObjects\" />
-      <Folder Include="Evironment\Domain\Repositories\" />
-      <Folder Include="Evironment\Domain\Services\" />
-      <Folder Include="Evironment\Infrastructure\" />
-      <Folder Include="Evironment\Interfaces\" />
       <Folder Include="Facilities\Domain\Model\Entities\" />
       <Folder Include="Facilities\Interfaces\ACL\" />
       <Folder Include="Inventory\Domain\Model\Entities\" />

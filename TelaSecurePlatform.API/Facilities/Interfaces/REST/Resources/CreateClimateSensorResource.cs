@@ -1,3 +1,5 @@
-﻿namespace TelaSecurePlatform.API.Facilities.Interfaces.REST.Resources;
+﻿using TelaSecurePlatform.API.Facilities.Domain.Model.ValueObjects;
 
-public record CreateClimateSensorResource(string Name, string Model, string Type, string Image, string StoreRoomId);
+namespace TelaSecurePlatform.API.Facilities.Interfaces.REST.Resources;
+
+public record CreateClimateSensorResource(string Name, string Model, EClimateSensorType Type, string Image, string StoreRoomId);

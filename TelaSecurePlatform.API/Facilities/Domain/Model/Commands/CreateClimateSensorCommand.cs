@@ -1,3 +1,5 @@
-﻿namespace TelaSecurePlatform.API.Facilities.Domain.Model.Commands;
+﻿using TelaSecurePlatform.API.Facilities.Domain.Model.ValueObjects;
 
-public record CreateClimateSensorCommand(string Name, string Model, string Type, string Image, string StoreroomId);
+namespace TelaSecurePlatform.API.Facilities.Domain.Model.Commands;
+
+public record CreateClimateSensorCommand(string Name, string Model, EClimateSensorType Type, string Image, string StoreroomId);

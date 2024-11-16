@@ -6,10 +6,10 @@ using TelaSecurePlatform.API.Shared.Infrastructure.Persistence.EFC.Repositories;
 
 namespace TelaSecurePlatform.API.Facilities.Infrastructure.Persistence.EFC.Repositories;
 
-public class StoreroomRepository(AppDbContext context) : BaseRepository<Storeroom>(context), IStoreroomRepository
+public class EnvironmentDeviceRepository(AppDbContext context)
+: BaseRepository<EnvironmentDevice>(context), IEnvironmentDeviceRepository
 {
-    public async Task<Storeroom?> FindStoreroomByNameAsync(int storeroomId) =>
-        await Context.Set<Storeroom>()
-            .FirstOrDefaultAsync(s => s.Id == storeroomId);
-    
+    public async Task<bool> FindByNameAndStoreRoomIdAsync(string name, string storeRoomId) =>
+        await Context.Set<EnvironmentDevice>()
+            .AnyAsync(ed => ed.Name == name && ed.StoreRoomId == storeRoomId); 
 }

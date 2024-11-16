@@ -5,5 +5,5 @@ namespace TelaSecurePlatform.API.Facilities.Domain.Repositories;
 
 public interface IStoreroomRepository : IBaseRepository<Storeroom>
 {
-    //Task<Storeroom?> FindStoreroomByIdAsync(int storeroomId);
+    Task<Storeroom?> FindStoreroomByNameAsync(int storeroomId);
 }

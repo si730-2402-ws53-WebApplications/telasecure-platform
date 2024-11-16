@@ -57,4 +57,15 @@ public class Storeroom
         Temperature = new Temperature(command.ActualTemperature, command.MaximumTemperature, command.MinimumTemperature, command.TemperatureUnit);
         Humidity = new Humidity(command.ActualHumidity, command.MaximumHumidity, command.MinimumHumidity, command.HumidityUnit);
     }
+    
+    public void UpdateInformation(string name, string location, string description, int capacity, Contact contact, Temperature temperature, Humidity humidity)
+    {
+        Name = name;
+        Location = location;
+        Description = description;
+        Capacity = capacity;
+        Contact = contact;
+        Temperature = temperature;
+        Humidity = humidity;
+    }
 }

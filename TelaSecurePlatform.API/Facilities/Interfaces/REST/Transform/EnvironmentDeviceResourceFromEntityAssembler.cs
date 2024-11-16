@@ -3,11 +3,11 @@ using TelaSecurePlatform.API.Facilities.Interfaces.REST.Resources;
 
 namespace TelaSecurePlatform.API.Facilities.Interfaces.REST.Transform;
 
-public static class EnviroDeviceResourceFromEntityAssembler 
+public static class EnvironmentDeviceResourceFromEntityAssembler 
 {
-    public static EnviroDeviceResource ToResourceFromEntity(EnviroDevice entity)
+    public static EnvironmentDeviceResource ToResourceFromEntity(EnvironmentDevice entity)
     {
-        return new EnviroDeviceResource(
+        return new EnvironmentDeviceResource(
             entity.Id,
             entity.Name,
             entity.Model,

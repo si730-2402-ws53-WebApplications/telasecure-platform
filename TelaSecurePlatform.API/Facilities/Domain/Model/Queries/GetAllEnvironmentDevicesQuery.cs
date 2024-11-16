@@ -1,3 +1,3 @@
 ﻿namespace TelaSecurePlatform.API.Facilities.Domain.Model.Queries;
 
-public record GetAllEnviroDevicesQuery();
+public record GetAllEnvironmentDevicesQuery();

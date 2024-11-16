@@ -1,6 +1,7 @@
 ﻿using System.Net.Mime;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
+using TelaSecurePlatform.API.Facilities.Domain.Model.Commands;
 using TelaSecurePlatform.API.Facilities.Domain.Model.Queries;
 using TelaSecurePlatform.API.Facilities.Domain.Services;
 using TelaSecurePlatform.API.Facilities.Interfaces.REST.Resources;
@@ -46,6 +47,26 @@ public class StoreroomsController(
         return CreatedAtAction(nameof(GetStoreroomById), new { storeroomId = storeroom.Id }, storeroomResource);
     }
     
+    //actualizar un storeroom
+    [HttpPut("{storeroomId:int}")]
+    public async Task<IActionResult> UpdateStoreroom(int storeroomId, UpdateStoreroomResource resource)
+    {
+        var updateStoreroomCommand = UpdateStoreroomCommandFromResourceAssembler.ToCommand(storeroomId, resource);
+        var storeroom = await storeroomCommandService.Handle(updateStoreroomCommand);
+        if (storeroom is null) return BadRequest();
+        var storeroomResource = StoreroomResourceFromEntityAssembler.ToResourceFromEntity(storeroom);
+        return Ok(storeroomResource);
+    }
+    
+    //eliminar un storeroom
+    [HttpDelete("{storeroomId:int}")]
+    public async Task<IActionResult> DeleteStoreroom(int storeroomId)
+    {
+        var deleteStoreroomCommand = new DeleteStoreroomCommand(storeroomId);
+        var storeroomDeleted = await storeroomCommandService.Handle(deleteStoreroomCommand);
+        if (!storeroomDeleted) return NotFound();
+        return Ok();
+    }
     
     [HttpGet]
     [SwaggerOperation("Get All Storerooms", "Get all storerooms.", OperationId = "GetAllStorerooms")]
