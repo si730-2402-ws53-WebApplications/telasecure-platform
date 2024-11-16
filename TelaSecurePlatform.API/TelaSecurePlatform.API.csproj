@@ -25,7 +25,6 @@
 
     <ItemGroup>
       <Folder Include="Facilities\Domain\Model\Entities\" />
-      <Folder Include="Facilities\Interfaces\ACL\" />
       <Folder Include="Inventory\Domain\Model\Entities\" />
       <Folder Include="Inventory\Domain\Model\ValueObjects\" />
       <Folder Include="Inventory\Infrastructure\Persistence\EFC\" />
