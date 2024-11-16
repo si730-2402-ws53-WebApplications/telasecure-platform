@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Swashbuckle.AspNetCore.Annotations;
+using TelaSecurePlatform.API.Facilities.Domain.Model.Commands;
 using TelaSecurePlatform.API.Facilities.Domain.Model.Queries;
 using TelaSecurePlatform.API.Facilities.Domain.Services;
 using TelaSecurePlatform.API.Facilities.Interfaces.REST.Resources;
@@ -43,6 +44,20 @@ public class ClimateSensorsController(IClimateSensorCommandService climateSensor
         return CreatedAtAction(nameof(GetClimateSensorById), new {climateSensorId = climateSensor.Id}, climateSensorResource);
     }
     
+       
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id, UpdateClimateSensorResource resource)
+    {
+        var updateClimateSensorCommand = UpdateClimateSensorCommandFromResourceAssembler.ToCommandFromResource(id, resource);
+        var updatedSensor = await climateSensorCommandService.Handle(updateClimateSensorCommand);
+        if (updatedSensor == null)
+        {
+            return NotFound();
+        }
+
+        return Ok(updatedSensor);
+    }
+    
     
     [HttpGet]
     [SwaggerOperation("Get all climate sensors", "Get all climate sensors", OperationId = "GetAllClimateSensors")]
@@ -52,7 +67,21 @@ public class ClimateSensorsController(IClimateSensorCommandService climateSensor
     {
         var getAllClimateSensorsQuery = new GetAllClimateSensorsQuery();
         var climateSensors = await climateSensorQueryService.Handle(getAllClimateSensorsQuery);
-        var climateSensorResources = ClimateSensorResourceFromEntityAssembler.ToResourceFromEntity;
+        var climateSensorResources = climateSensors.Select(ClimateSensorResourceFromEntityAssembler.ToResourceFromEntity);
         return Ok(climateSensorResources);
+    }
+    
+ 
+    
+    [HttpDelete ("{climateSensorId:int}")]
+    [SwaggerOperation("Delete climate sensor", "Delete a climate sensor", OperationId = "DeleteClimateSensor")]
+    [SwaggerResponse(200, "Climate sensor deleted")]
+    [SwaggerResponse(404, "Climate sensor not found")]
+    public async Task<IActionResult> DeleteClimateSensor(int climateSensorId)
+    {
+        var deleteClimateSensorCommand = new DeleteClimateSensorCommand(climateSensorId);
+        var climateSensorDeleted = await climateSensorCommandService.Handle(deleteClimateSensorCommand);
+        if (!climateSensorDeleted) return NotFound();
+        return Ok();
     }
 }

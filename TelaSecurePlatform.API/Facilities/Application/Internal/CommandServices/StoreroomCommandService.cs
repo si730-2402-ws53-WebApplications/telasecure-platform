@@ -25,4 +25,41 @@ public class StoreroomCommandService (
             return null;
         }
     }
+    
+    //actualizar un storeroom
+    public async Task<Storeroom?> Handle(UpdateStoreroomCommand command)
+    {
+        var storeroom = await storeroomRepository.FindByIdAsync(command.StoreroomId);
+        if (storeroom == null) return null;
+        try
+        {
+            storeroom.UpdateInformation(command.Name, command.Location, command.Description, command.Capacity, command.Contact, command.Temperature, command.Humidity);
+            storeroomRepository.Update(storeroom);
+            await unitOfWork.CompleteAsync();
+            return storeroom;
+        }
+        catch (Exception e)
+        {
+            return null;
+        }
+    }
+    
+    //eliminar un storeroom
+    public async Task<bool> Handle(DeleteStoreroomCommand command)
+    {
+        try
+        {
+            var storeroom = await storeroomRepository.FindByIdAsync(command.StoreroomId);
+            if (storeroom == null) return false;
+
+            storeroomRepository.Remove(storeroom);
+            await unitOfWork.CompleteAsync();
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
+    
 }
