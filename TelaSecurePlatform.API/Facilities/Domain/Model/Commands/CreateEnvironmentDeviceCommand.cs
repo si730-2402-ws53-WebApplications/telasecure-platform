@@ -1,3 +1,5 @@
-﻿namespace TelaSecurePlatform.API.Facilities.Domain.Model.Commands;
+﻿using TelaSecurePlatform.API.Facilities.Domain.Model.ValueObjects;
 
-public record CreateEnvironmentDeviceCommand(string Name, string Model, int Value, string Type, string Unit, string StoreRoomId);
+namespace TelaSecurePlatform.API.Facilities.Domain.Model.Commands;
+
+public record CreateEnvironmentDeviceCommand(string Name, string Model, int Value, EEnvironmentDeviceType Type, string Unit, string StoreRoomId);

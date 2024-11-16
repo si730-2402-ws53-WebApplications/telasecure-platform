@@ -1,5 +1,6 @@
 ﻿using TelaSecurePlatform.API.Facilities.Domain.Model.Aggregates;
 using TelaSecurePlatform.API.Facilities.Domain.Model.Commands;
+using TelaSecurePlatform.API.Facilities.Domain.Model.ValueObjects;
 using TelaSecurePlatform.API.Facilities.Domain.Repositories;
 using TelaSecurePlatform.API.Facilities.Domain.Services;
 using TelaSecurePlatform.API.Shared.Domain.Repositories;
@@ -20,6 +21,11 @@ public class ClimateSensorCommandService(
         var exists = await climateSensorRepository.FindByNameAndStoreRoomIdAsync(climateSensor.Name, climateSensor.StoreRoomId);
         if (exists) return null;
         
+        //validar que el integer sea un tipo de sensor
+        if (!Enum.IsDefined(typeof(EClimateSensorType), command.Type))
+            return null;
+
+        
         try
         {
             await climateSensorRepository.AddAsync(climateSensor);
@@ -37,6 +43,9 @@ public class ClimateSensorCommandService(
     {
         var sensor = await climateSensorRepository.FindByIdAsync(command.ClimateSensorId);
         if (sensor == null) return null;
+        //validar que el integer sea un tipo de sensor
+        if (!Enum.IsDefined(typeof(EClimateSensorType), command.Type))
+            return null;
 
         try
         {

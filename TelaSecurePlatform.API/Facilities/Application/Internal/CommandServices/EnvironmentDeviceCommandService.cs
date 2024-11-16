@@ -1,5 +1,7 @@
-﻿using TelaSecurePlatform.API.Facilities.Domain.Model.Aggregates;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using TelaSecurePlatform.API.Facilities.Domain.Model.Aggregates;
 using TelaSecurePlatform.API.Facilities.Domain.Model.Commands;
+using TelaSecurePlatform.API.Facilities.Domain.Model.ValueObjects;
 using TelaSecurePlatform.API.Facilities.Domain.Repositories;
 using TelaSecurePlatform.API.Facilities.Domain.Services;
 using TelaSecurePlatform.API.Shared.Domain.Repositories;
@@ -12,6 +14,11 @@ public class EnvironmentDeviceCommandService(IEnvironmentDeviceRepository enviro
     //crear nuevo environment device id
     public async Task<EnvironmentDevice?> Handle(CreateEnvironmentDeviceCommand command)
     {
+        //validar que el integer sea un tipo de device
+        if (!Enum.IsDefined(typeof(EEnvironmentDeviceType), command.Type))
+        {
+            return null;
+        }
         var enviroDevice = new EnvironmentDevice(command);
         try
         {
@@ -31,6 +38,9 @@ public class EnvironmentDeviceCommandService(IEnvironmentDeviceRepository enviro
     {
         var enviroDevice = await environmentDeviceRepository.FindByIdAsync(command.EnvironmentDeviceId);
         if (enviroDevice == null) return null;
+        //validar que el integer sea un tipo de device
+        if (!Enum.IsDefined(typeof(EEnvironmentDeviceType), command.Type))
+            return null;
 
         try
         {
