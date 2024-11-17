@@ -17,5 +17,13 @@ public class Fabric
         CategoryId = categoryId;
         Quantity = quantity;
     }
+
+    public void UpdateInformation(string name, int storeroomId, int categoryId, int quantity)
+    {
+        Name = name;
+        StoreroomId = storeroomId;
+        CategoryId = categoryId;
+        Quantity = quantity;
+    }
 }
                    

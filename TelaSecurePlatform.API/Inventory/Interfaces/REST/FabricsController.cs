@@ -1,6 +1,7 @@
 ﻿using System.Net.Mime;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
+using TelaSecurePlatform.API.Inventory.Domain.Model.Commands;
 using TelaSecurePlatform.API.Inventory.Domain.Model.Queries;
 using TelaSecurePlatform.API.Inventory.Domain.Services;
 using TelaSecurePlatform.API.Inventory.Interfaces.REST.Resources;
@@ -35,9 +36,6 @@ public class FabricsController(
         return Ok(fabricResource);
     }
     
-    
-    
-    
     [HttpPost]
     [SwaggerOperation(
         Summary = "Create a new fabric",
@@ -56,7 +54,25 @@ public class FabricsController(
     }
     
     
+    [HttpPut("{fabricId:int}")]
+    public async Task<IActionResult> UpdateFabric([FromRoute] int fabricId, UpdateFabricResource resource)
+    {
+        var updateFabricCommand = UpdateFabricCommandFromResourceAssembler.ToCommand(fabricId, resource);
+        var fabric = await fabricCommandService.Handle(updateFabricCommand);
+        if (fabric is null) return NotFound();
+        var fabricResource = FabricResourceFromEntityAssembler.ToResourceFromEntity(fabric);
+        return Ok(fabricResource);
+    }
     
+    
+    [HttpDelete("{fabricId:int}")]
+    public async Task<IActionResult> DeleteFabric([FromRoute] int fabricId)
+    {
+        var deleteFabricCommand = new DeleteFabricCommand(fabricId);
+        var isDeleted = await fabricCommandService.Handle(deleteFabricCommand);
+        if (!isDeleted) return NotFound();
+        return NoContent();
+    }
     
     [HttpGet]
     [SwaggerOperation(
