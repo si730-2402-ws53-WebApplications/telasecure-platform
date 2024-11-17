@@ -25,13 +25,11 @@
 
     <ItemGroup>
       <Folder Include="Facilities\Domain\Model\Entities\" />
-      <Folder Include="Facilities\Interfaces\ACL\" />
-      <Folder Include="Inventory\Domain\Model\Entities\" />
       <Folder Include="Inventory\Domain\Model\ValueObjects\" />
       <Folder Include="Inventory\Infrastructure\Persistence\EFC\" />
-      <Folder Include="Reports\Infrastructure\Persistence\" />
-      <Folder Include="Reports\Interfaces\REST\Resources\" />
-      <Folder Include="Reports\Interfaces\REST\Transform\" />
+      <Folder Include="Report\Infrastructure\Persistence\" />
+      <Folder Include="Report\Interfaces\REST\Resources\" />
+      <Folder Include="Report\Interfaces\REST\Transform\" />
     </ItemGroup>
 
 </Project>
