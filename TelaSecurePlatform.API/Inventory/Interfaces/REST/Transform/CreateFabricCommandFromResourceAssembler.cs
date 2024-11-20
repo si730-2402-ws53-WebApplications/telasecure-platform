@@ -7,6 +7,6 @@ public static class CreateFabricCommandFromResourceAssembler
 {
     public static CreateFabricCommand ToCommandFromResource(CreateFabricResource resource)
     {
-        return new CreateFabricCommand(resource.Name, resource.StoreroomId, resource.CategoryId, resource.Quantity);
+        return new CreateFabricCommand(resource.Name, resource.WarehouseId, resource.CategoryId, resource.Quantity);
     }
 }

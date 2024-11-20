@@ -3,10 +3,10 @@ using TelaSecurePlatform.API.Facilities.Domain.Model.Queries;
 
 namespace TelaSecurePlatform.API.Facilities.Domain.Services;
 
-public interface IStoreroomQueryService
+public interface IWarehouseQueryService
 {
     
-    Task<IEnumerable<Storeroom>> Handle(GetAllStoreroomsQuery query);
+    Task<IEnumerable<Warehouse>> Handle(GetAllWarehousesQuery query);
     
-    Task<Storeroom?> Handle(GetStoreroomByIdQuery query);
+    Task<Warehouse?> Handle(GetWarehouseByIdQuery query);
 }

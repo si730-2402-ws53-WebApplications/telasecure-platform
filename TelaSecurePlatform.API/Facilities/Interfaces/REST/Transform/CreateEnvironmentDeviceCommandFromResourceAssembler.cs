@@ -13,6 +13,6 @@ public static class CreateEnvironmentDeviceCommandFromResourceAssembler
             resource.Value,
             resource.Type,
             resource.Unit,
-            resource.StoreroomId);
+            resource.WarehouseId);
     }
 }

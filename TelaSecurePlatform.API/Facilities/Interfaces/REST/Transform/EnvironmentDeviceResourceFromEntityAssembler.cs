@@ -14,6 +14,6 @@ public static class EnvironmentDeviceResourceFromEntityAssembler
             entity.Value,
             entity.Type,
             entity.Unit,
-            entity.StoreRoomId);
+            entity.WarehouseId);
     }
 }

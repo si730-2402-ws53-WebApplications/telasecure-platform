@@ -18,7 +18,7 @@ public class ClimateSensorCommandService(
         var climateSensor = new ClimateSensor(command);
         
         //se aplica el constrain para la creacion
-        var exists = await climateSensorRepository.FindByNameAndStoreRoomIdAsync(climateSensor.Name, climateSensor.StoreRoomId);
+        var exists = await climateSensorRepository.FindByNameAndWarehouseIdAsync(climateSensor.Name, climateSensor.WarehouseId);
         if (exists) return null;
         
         //validar que el integer sea un tipo de sensor
@@ -49,7 +49,7 @@ public class ClimateSensorCommandService(
 
         try
         {
-            sensor.UpdateInformation(command.Name, command.Model, command.Type, command.Image, command.StoreRoomId);
+            sensor.UpdateInformation(command.Name, command.Model, command.Type, command.Image, command.WarehouseId);
             climateSensorRepository.Update(sensor);
             await unitOfWork.CompleteAsync();
             return sensor;

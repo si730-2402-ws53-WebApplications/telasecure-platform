@@ -10,7 +10,7 @@ public static class FabricResourceFromEntityAssembler
         return new FabricResource(
             entity.Id,
             entity.Name,
-            entity.StoreroomId,
+            entity.WarehouseId,
             entity.CategoryId,
             entity.Quantity
         );

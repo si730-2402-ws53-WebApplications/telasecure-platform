@@ -3,12 +3,12 @@ using TelaSecurePlatform.API.Facilities.Interfaces.REST.Resources;
 
 namespace TelaSecurePlatform.API.Facilities.Interfaces.REST.Transform;
 
-public static class CreateStoreroomCommandFromResourceAssembler
+public static class CreateWarehouseCommandFromResourceAssembler
 {
     
-    public static CreateStoreroomCommand ToCommandFromResource(CreateStoreroomResource resource)
+    public static CreateWarehouseCommand ToCommandFromResource(CreateWarehouseResource resource)
     {
-        return new CreateStoreroomCommand(
+        return new CreateWarehouseCommand(
             resource.Name,
             resource.Location,
             resource.Description,

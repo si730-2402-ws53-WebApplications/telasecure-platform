@@ -6,5 +6,5 @@ namespace TelaSecurePlatform.API.Facilities.Domain.Repositories;
 public interface IClimateSensorRepository : IBaseRepository<ClimateSensor>
 {
     //constain para no crear si tiene el mismo nombre en el mismo almacen
-    Task<bool> FindByNameAndStoreRoomIdAsync(string name, string storeRoomId);
+    Task<bool> FindByNameAndWarehouseIdAsync(string name, string warehouseId);
 }

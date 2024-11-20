@@ -1,6 +1,6 @@
 ﻿namespace TelaSecurePlatform.API.Facilities.Interfaces.REST.Resources;
 
-public record CreateStoreroomResource(
+public record CreateWarehouseResource(
     string Name,
     string Location,
     string Description,

@@ -2,4 +2,4 @@
 
 namespace TelaSecurePlatform.API.Facilities.Interfaces.REST.Resources;
 
-public record UpdateEnvironmentDeviceResource(string Name, string Model, int Value, EEnvironmentDeviceType Type, string Unit, string StoreRoomId);
+public record UpdateEnvironmentDeviceResource(string Name, string Model, int Value, EEnvironmentDeviceType Type, string Unit, string WarehouseId);

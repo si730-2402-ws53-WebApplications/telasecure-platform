@@ -10,7 +10,7 @@ public class ClimateSensorRepository(AppDbContext context)
     : BaseRepository<ClimateSensor>(context), IClimateSensorRepository 
 {
     //para constrain de creacion por nombre y almacen
-    public async Task<bool> FindByNameAndStoreRoomIdAsync(string name, string storeRoomId) =>
+    public async Task<bool> FindByNameAndWarehouseIdAsync(string name, string warehouseId) =>
         await Context.Set<ClimateSensor>()
-            .AnyAsync(cs => cs.Name == name && cs.StoreRoomId == storeRoomId); 
+            .AnyAsync(cs => cs.Name == name && cs.WarehouseId == warehouseId); 
 }
