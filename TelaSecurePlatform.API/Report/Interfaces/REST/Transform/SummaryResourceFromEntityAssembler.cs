@@ -3,11 +3,11 @@ using TelaSecurePlatform.API.Report.Interfaces.REST.Resources;
 
 namespace TelaSecurePlatform.API.Report.Interfaces.REST.Transform;
 
-public static class ReportResourceFromEntityAssembler
+public static class SummaryResourceFromEntityAssembler
 {
-    public static ReportResource ToResourceFromEntity(Report entity)
+    public static SummaryResource ToResourceFromEntity(TelaSecurePlatform.API.Report.Domain.Model.Aggregates.Summary entity)
     {
-        return new ReportResource(
+        return new SummaryResource(
             entity.Id,
             entity.Date,
             entity.FabricsData,

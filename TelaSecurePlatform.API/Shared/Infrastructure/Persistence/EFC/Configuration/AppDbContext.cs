@@ -52,6 +52,12 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
         builder.Entity<ClimateSensor>().Property(f => f.Image).IsRequired();
         builder.Entity<ClimateSensor>().Property(f => f.WarehouseId).IsRequired();
         
+        builder.Entity<Report.Domain.Model.Aggregates.Summary>().HasKey(s => s.Id);
+        builder.Entity<Report.Domain.Model.Aggregates.Summary>().Property(s => s.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<Report.Domain.Model.Aggregates.Summary>().Property(s => s.Date).IsRequired();
+        builder.Entity<Report.Domain.Model.Aggregates.Summary>().Property(s => s.FabricsData).IsRequired();
+        builder.Entity<Report.Domain.Model.Aggregates.Summary>().Property(s => s.EnviroDevicesData).IsRequired();
+        builder.Entity<Report.Domain.Model.Aggregates.Summary>().Property(s => s.ClimateSensorsData).IsRequired();
         
         builder.Entity<EnvironmentDevice>().HasKey(e => e.Id);
         builder.Entity<EnvironmentDevice>().Property(e => e.Id).IsRequired().ValueGeneratedOnAdd();
