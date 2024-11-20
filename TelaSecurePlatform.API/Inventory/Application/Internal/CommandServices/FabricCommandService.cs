@@ -8,14 +8,14 @@ namespace TelaSecurePlatform.API.Inventory.Application.Internal.CommandServices;
 
 public class FabricCommandService(
     IFabricRepository fabricRepository,
-    IExternalStoreroomService externalStoreroomService,
+    IExternalWarehouseService externalWarehouseService,
     IUnitOfWork unitOfWork)
 : IFabricCommandService
 {
     public async Task<Fabric?> Handle(CreateFabricCommand command)
     {
-        var fabric = new Fabric(command.Name, command.StoreroomId, command.CategoryId, command.Quantity);
-        if (!await externalStoreroomService.IsStoreroomIdValid(command.StoreroomId))
+        var fabric = new Fabric(command.Name, command.WarehouseId, command.CategoryId, command.Quantity);
+        if (!await externalWarehouseService.IsWarehouseIdValid(command.WarehouseId))
         {
             return null;
         }
@@ -31,8 +31,8 @@ public class FabricCommandService(
         {
             return null;
         }
-        fabric.UpdateInformation(command.Name, command.StoreroomId, command.CategoryId, command.Quantity);
-        if (!await externalStoreroomService.IsStoreroomIdValid(command.StoreroomId))
+        fabric.UpdateInformation(command.Name, command.WarehouseId, command.CategoryId, command.Quantity);
+        if (!await externalWarehouseService.IsWarehouseIdValid(command.WarehouseId))
         {
             return null;
         }

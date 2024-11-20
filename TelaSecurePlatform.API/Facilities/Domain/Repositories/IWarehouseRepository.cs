@@ -3,7 +3,7 @@ using TelaSecurePlatform.API.Shared.Domain.Repositories;
 
 namespace TelaSecurePlatform.API.Facilities.Domain.Repositories;
 
-public interface IStoreroomRepository : IBaseRepository<Storeroom>
+public interface IWarehouseRepository : IBaseRepository<Warehouse>
 {
-    Task<Storeroom?> FindStoreroomByNameAsync(int storeroomId);
+    Task<Warehouse?> FindWarehouseByNameAsync(int warehouseId);
 }

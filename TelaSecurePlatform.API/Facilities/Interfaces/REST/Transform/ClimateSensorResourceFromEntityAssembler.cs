@@ -13,6 +13,6 @@ public static class ClimateSensorResourceFromEntityAssembler
             entity.Model,
             entity.Type,
             entity.Image,
-            entity.StoreRoomId);
+            entity.WarehouseId);
     }
 }

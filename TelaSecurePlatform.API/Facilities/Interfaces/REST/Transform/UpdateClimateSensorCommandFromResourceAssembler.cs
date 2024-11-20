@@ -11,6 +11,6 @@ public class UpdateClimateSensorCommandFromResourceAssembler {
             resource.Model,
             resource.Type,
             resource.Image,
-            resource.StoreRoomId);
+            resource.WarehouseId);
     }
 }

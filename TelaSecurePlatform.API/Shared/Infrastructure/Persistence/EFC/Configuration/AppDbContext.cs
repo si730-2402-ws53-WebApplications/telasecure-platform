@@ -26,7 +26,7 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
         builder.Entity<Fabric>().HasKey(f => f.Id);
         builder.Entity<Fabric>().Property(f => f.Id).IsRequired().ValueGeneratedOnAdd();
         builder.Entity<Fabric>().Property(f => f.Name).IsRequired().HasMaxLength(30);
-        builder.Entity<Fabric>().Property(f => f.StoreroomId).IsRequired();
+        builder.Entity<Fabric>().Property(f => f.WarehouseId).IsRequired();
         builder.Entity<Fabric>().Property(f => f.CategoryId).IsRequired();
         builder.Entity<Fabric>().Property(f => f.Quantity).IsRequired();
         
@@ -50,7 +50,7 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
         builder.Entity<ClimateSensor>().Property(f => f.Model).IsRequired();
         builder.Entity<ClimateSensor>().Property(f => f.Type).IsRequired();
         builder.Entity<ClimateSensor>().Property(f => f.Image).IsRequired();
-        builder.Entity<ClimateSensor>().Property(f => f.StoreRoomId).IsRequired();
+        builder.Entity<ClimateSensor>().Property(f => f.WarehouseId).IsRequired();
         
         
         builder.Entity<EnvironmentDevice>().HasKey(e => e.Id);
@@ -60,17 +60,17 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
         builder.Entity<EnvironmentDevice>().Property(e => e.Type).IsRequired();
         builder.Entity<EnvironmentDevice>().Property(e => e.Unit).IsRequired();
         builder.Entity<EnvironmentDevice>().Property(e => e.Value).IsRequired();
-        builder.Entity<EnvironmentDevice>().Property(e => e.StoreRoomId).IsRequired();
+        builder.Entity<EnvironmentDevice>().Property(e => e.WarehouseId).IsRequired();
         //builder.Entity<EnvironmentDevice>().Property(e => e.Status).IsRequired();
         
         
-        builder.Entity<Storeroom>().HasKey(s => s.Id);
-        builder.Entity<Storeroom>().Property(s => s.Id).IsRequired().ValueGeneratedOnAdd();
-        builder.Entity<Storeroom>().Property(s => s.Name).IsRequired();
-        builder.Entity<Storeroom>().Property(s => s.Location).IsRequired();
-        builder.Entity<Storeroom>().Property(s => s.Description).IsRequired();
-        builder.Entity<Storeroom>().Property(s => s.Capacity).IsRequired();
-        builder.Entity<Storeroom>().OwnsOne(s => s.Contact,
+        builder.Entity<Warehouse>().HasKey(s => s.Id);
+        builder.Entity<Warehouse>().Property(s => s.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<Warehouse>().Property(s => s.Name).IsRequired();
+        builder.Entity<Warehouse>().Property(s => s.Location).IsRequired();
+        builder.Entity<Warehouse>().Property(s => s.Description).IsRequired();
+        builder.Entity<Warehouse>().Property(s => s.Capacity).IsRequired();
+        builder.Entity<Warehouse>().OwnsOne(s => s.Contact,
             c =>
             {
                 c.WithOwner().HasForeignKey("Id");
@@ -78,7 +78,7 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
                 c.Property(p => p.Email).HasColumnName("Email");
             });
         
-        builder.Entity<Storeroom>().OwnsOne(s => s.Temperature,
+        builder.Entity<Warehouse>().OwnsOne(s => s.Temperature,
             t =>
             {
                 t.WithOwner().HasForeignKey("Id");
@@ -88,7 +88,7 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
                 t.Property(p => p.Unit).HasColumnName("TemperatureUnit");
             });
         
-        builder.Entity<Storeroom>().OwnsOne(s => s.Humidity,
+        builder.Entity<Warehouse>().OwnsOne(s => s.Humidity,
             h =>
             {
                 h.WithOwner().HasForeignKey("Id");

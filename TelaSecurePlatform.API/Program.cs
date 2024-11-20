@@ -128,13 +128,13 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IFabricRepository, FabricRepository>();
 builder.Services.AddScoped<IFabricCommandService, FabricCommandService>();
 builder.Services.AddScoped<IFabricQueryService, FabricQueryService>();
-builder.Services.AddScoped<IExternalStoreroomService, ExternalStoreroomService>();
+builder.Services.AddScoped<IExternalWarehouseService, ExternalWarehouseService>();
 
 //facilities bounded context
-builder.Services.AddScoped<IStoreroomRepository, StoreroomRepository>();
-builder.Services.AddScoped<IStoreroomCommandService, StoreroomCommandService>();
-builder.Services.AddScoped<IStoreroomQueryService, StoreroomQueryService>();
-builder.Services.AddScoped<IStoreroomsContextFacade, StoreroomsContextFacade>();
+builder.Services.AddScoped<IWarehouseRepository, WarehouseRepository>();
+builder.Services.AddScoped<IWarehouseCommandService, WarehouseCommandService>();
+builder.Services.AddScoped<IWarehouseQueryService, WarehouseQueryService>();
+builder.Services.AddScoped<IWarehousesContextFacade, WarehousesContextFacade>();
 
 builder.Services.AddScoped<IClimateSensorRepository, ClimateSensorRepository>();
 builder.Services.AddScoped<IClimateSensorCommandService, ClimateSensorCommandService>();

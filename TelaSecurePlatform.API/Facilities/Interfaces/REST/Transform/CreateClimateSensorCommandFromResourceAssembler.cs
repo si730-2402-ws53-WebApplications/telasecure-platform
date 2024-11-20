@@ -12,6 +12,6 @@ public static class CreateClimateSensorCommandFromResourceAssembler
             resource.Model,
             resource.Type,
             resource.Image,
-            resource.StoreRoomId);
+            resource.WarehouseId);
     }
 }

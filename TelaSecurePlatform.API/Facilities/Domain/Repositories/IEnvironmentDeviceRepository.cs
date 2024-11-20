@@ -5,5 +5,5 @@ namespace TelaSecurePlatform.API.Facilities.Domain.Repositories;
 
 public interface IEnvironmentDeviceRepository : IBaseRepository<EnvironmentDevice>
 {
-    Task<bool> FindByNameAndStoreRoomIdAsync(string name, string storeRoomId);
+    Task<bool> FindByNameAndWarehouseIdAsync(string name, string warehouseId);
 }

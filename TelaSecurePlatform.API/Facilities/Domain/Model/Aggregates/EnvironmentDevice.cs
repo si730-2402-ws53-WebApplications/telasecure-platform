@@ -11,20 +11,20 @@ public class EnvironmentDevice
     public int Value { get; private set; }
     public EEnvironmentDeviceType Type { get; private set; }
     public string Unit { get; private set; }
-    public string StoreRoomId { get; private set; }
+    public string WarehouseId { get; private set; }
     
     public EnvironmentDevice()
     {
     }
     
-    public EnvironmentDevice(string name, string model, int value, EEnvironmentDeviceType type, string unit, string storeRoomId)
+    public EnvironmentDevice(string name, string model, int value, EEnvironmentDeviceType type, string unit, string warehouseId)
     {
         Name = name;
         Model = model;
         Value = value;
         Type = type;
         Unit = unit;
-        StoreRoomId = storeRoomId;
+        WarehouseId = warehouseId;
     }
 
     public EnvironmentDevice(CreateEnvironmentDeviceCommand command)
@@ -34,16 +34,16 @@ public class EnvironmentDevice
         Value = command.Value;
         Type = command.Type;
         Unit = command.Unit;
-        StoreRoomId = command.StoreRoomId;
+        WarehouseId = command.WarehouseId;
     }
     
-    public void UpdateInformation(string name, string model, int value, EEnvironmentDeviceType type, string unit, string storeRoomId)
+    public void UpdateInformation(string name, string model, int value, EEnvironmentDeviceType type, string unit, string warehouseId)
     {
         Name = name;
         Model = model;
         Value = value;
         Type = type;
         Unit = unit;
-        StoreRoomId = storeRoomId;
+        WarehouseId = warehouseId;
     }
 }

@@ -3,7 +3,7 @@ using TelaSecurePlatform.API.Facilities.Domain.Model.ValueObjects;
 
 namespace TelaSecurePlatform.API.Facilities.Domain.Model.Aggregates;
 
-public class Storeroom
+public class Warehouse
 {
     public int Id { get; }
     public string Name { get; private set; }
@@ -28,7 +28,7 @@ public class Storeroom
     public int MinimumHumidity => Humidity.Minimum;
     public string HumidityUnit => Humidity.Unit;
     
-    public Storeroom()
+    public Warehouse()
     {
         Contact = new Contact();
         Temperature = new Temperature();
@@ -36,7 +36,7 @@ public class Storeroom
                 
     }
     
-    public Storeroom(string name, string location, string description, int capacity, string phone, string email, int actualTemperature, int maximumTemperature, int minimumTemperature, string temperatureUnit, int actualHumidity, int maximumHumidity, int minimumHumidity, string humidityUnit)
+    public Warehouse(string name, string location, string description, int capacity, string phone, string email, int actualTemperature, int maximumTemperature, int minimumTemperature, string temperatureUnit, int actualHumidity, int maximumHumidity, int minimumHumidity, string humidityUnit)
     {
         Name = name;
         Location = location;
@@ -47,7 +47,7 @@ public class Storeroom
         Humidity = new Humidity(actualHumidity, maximumHumidity, minimumHumidity, humidityUnit);
     }
 
-    public Storeroom(CreateStoreroomCommand command)
+    public Warehouse(CreateWarehouseCommand command)
     {
         Name = command.Name;
         Location = command.Location;
