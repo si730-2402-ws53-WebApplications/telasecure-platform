@@ -44,7 +44,7 @@ public class EnvironmentDeviceCommandService(IEnvironmentDeviceRepository enviro
 
         try
         {
-            enviroDevice.UpdateInformation(command.Name, command.Model, command.Value, command.Type, command.Unit, command.StoreRoomId);
+            enviroDevice.UpdateInformation(command.Name, command.Model, command.Value, command.Type, command.Unit, command.WarehouseId);
             environmentDeviceRepository.Update(enviroDevice);
             await unitOfWork.CompleteAsync();
             return enviroDevice;

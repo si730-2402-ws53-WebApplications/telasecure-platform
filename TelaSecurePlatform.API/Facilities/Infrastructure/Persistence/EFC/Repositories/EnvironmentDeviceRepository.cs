@@ -9,7 +9,7 @@ namespace TelaSecurePlatform.API.Facilities.Infrastructure.Persistence.EFC.Repos
 public class EnvironmentDeviceRepository(AppDbContext context)
 : BaseRepository<EnvironmentDevice>(context), IEnvironmentDeviceRepository
 {
-    public async Task<bool> FindByNameAndStoreRoomIdAsync(string name, string storeRoomId) =>
+    public async Task<bool> FindByNameAndWarehouseIdAsync(string name, string warehouseId) =>
         await Context.Set<EnvironmentDevice>()
-            .AnyAsync(ed => ed.Name == name && ed.StoreRoomId == storeRoomId); 
+            .AnyAsync(ed => ed.Name == name && ed.WarehouseId == warehouseId); 
 }

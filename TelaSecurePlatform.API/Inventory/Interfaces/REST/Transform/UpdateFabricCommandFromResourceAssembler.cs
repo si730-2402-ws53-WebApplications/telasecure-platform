@@ -7,6 +7,6 @@ public class UpdateFabricCommandFromResourceAssembler
 {
     public static UpdateFabricCommand ToCommand(int fabricId, UpdateFabricResource resource)
     {
-        return new UpdateFabricCommand(fabricId, resource.Name, resource.StoreroomId, resource.CategoryId, resource.Quantity);
+        return new UpdateFabricCommand(fabricId, resource.Name, resource.WarehouseId, resource.CategoryId, resource.Quantity);
     }
 }

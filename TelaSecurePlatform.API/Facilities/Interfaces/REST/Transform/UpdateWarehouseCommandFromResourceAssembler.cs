@@ -4,12 +4,12 @@ using TelaSecurePlatform.API.Facilities.Interfaces.REST.Resources;
 
 namespace TelaSecurePlatform.API.Facilities.Interfaces.REST.Transform;
 
-public class UpdateStoreroomCommandFromResourceAssembler
+public class UpdateWarehouseCommandFromResourceAssembler
 {
-    public static UpdateStoreroomCommand ToCommand(int storeroomId, UpdateStoreroomResource resource)
+    public static UpdateWarehouseCommand ToCommand(int warehouseId, UpdateWarehouseResource resource)
     {
-        return new UpdateStoreroomCommand(
-            storeroomId,
+        return new UpdateWarehouseCommand(
+            warehouseId,
             resource.Name,
             resource.Location,
             resource.Description,

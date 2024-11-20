@@ -14,7 +14,7 @@ public class UpdateEnvironmentDeviceCommandFromResourceAssembler
             resource.Value,
             resource.Type,
             resource.Unit,
-            resource.StoreRoomId
+            resource.WarehouseId
         );
     }
 }
