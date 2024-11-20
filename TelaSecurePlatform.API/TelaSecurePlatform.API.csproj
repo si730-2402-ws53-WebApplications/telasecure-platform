@@ -37,9 +37,8 @@
         <Folder Include="Facilities\Domain\Model\Entities\" />
         <Folder Include="Inventory\Domain\Model\ValueObjects\" />
         <Folder Include="Inventory\Infrastructure\Persistence\EFC\" />
+        <Folder Include="Report\Application\Internal\OutboundedServices\" />
         <Folder Include="Report\Infrastructure\Persistence\" />
-        <Folder Include="Report\Interfaces\REST\Resources\" />
-        <Folder Include="Report\Interfaces\REST\Transform\" />
     </ItemGroup>
 
 </Project>

@@ -1,0 +1,27 @@
+﻿namespace TelaSecurePlatform.API.Report.Domain.Model.Aggregates;
+
+public class Report
+{
+    public int Id { get; }
+    public DateTime Date { get; private set; }
+    public List<FabricData> FabricsData { get; private set; }
+    public List<EnviroDeviceData> EnviroDevicesData { get; private set; }
+    public List<ClimateSensorData> ClimateSensorsData { get; private set; }
+
+    public Report(int id, DateTime date, List<FabricData> fabricsData, List<EnviroDeviceData> enviroDevicesData, List<ClimateSensorData> climateSensorsData)
+    {
+        Id = id;
+        Date = date;
+        FabricsData = fabricsData;
+        EnviroDevicesData = enviroDevicesData;
+        ClimateSensorsData = climateSensorsData;
+    }
+
+    public void UpdateInformation(DateTime date, List<FabricData> fabricsData, List<EnviroDeviceData> enviroDevicesData, List<ClimateSensorData> climateSensorsData)
+    {
+        Date = date;
+        FabricsData = fabricsData;
+        EnviroDevicesData = enviroDevicesData;
+        ClimateSensorsData = climateSensorsData;
+    }
+}
