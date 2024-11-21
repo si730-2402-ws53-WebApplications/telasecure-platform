@@ -41,17 +41,16 @@ using TelaSecurePlatform.API.Shared.Infrastructure.Persistence.EFC.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 // Apply Route Naming Convention
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 builder.Services.AddControllers(options => options.Conventions.Add(new KebabCaseRouteNamingConvention()));
 
-//Add CORS Policy (to all controllers)
+// Add CORS Policy (to all controllers)
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAllPolicy",
+    options.AddPolicy("AllowSpecificOrigin",
         policy => 
-            policy.AllowAnyOrigin()
+            policy.WithOrigins("http://localhost:5173")
                 .AllowAnyMethod()
                 .AllowAnyHeader());
 });
@@ -72,8 +71,6 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     else if (builder.Environment.IsProduction())
         options.UseMySQL(connectionString);
 });
-
-
 
 // OpenAPI/Swagger Configuration
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -126,18 +123,18 @@ builder.Services.AddSwaggerGen(options =>
     options.EnableAnnotations();
 });
 
-//dependency injection conf
+// Dependency injection configuration
 
-//shared boudned context dependency inyection conf
+// Shared bounded context dependency injection configuration
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-//inventory bounded context
+// Inventory bounded context
 builder.Services.AddScoped<IFabricRepository, FabricRepository>();
 builder.Services.AddScoped<IFabricCommandService, FabricCommandService>();
 builder.Services.AddScoped<IFabricQueryService, FabricQueryService>();
 builder.Services.AddScoped<IExternalWarehouseService, ExternalWarehouseService>();
 
-//facilities bounded context
+// Facilities bounded context
 builder.Services.AddScoped<IWarehouseRepository, WarehouseRepository>();
 builder.Services.AddScoped<IWarehouseCommandService, WarehouseCommandService>();
 builder.Services.AddScoped<IWarehouseQueryService, WarehouseQueryService>();
@@ -151,17 +148,14 @@ builder.Services.AddScoped<IEnvironmentDeviceRepository, EnvironmentDeviceReposi
 builder.Services.AddScoped<IEnvironmentDeviceCommandService, EnvironmentDeviceCommandService>();
 builder.Services.AddScoped<IEnvironmentDeviceQueryService, EnvironmentDeviceQueryService>();
 
-/*//report
-builder.Services.AddScoped<ISummaryRepository, SummaryRepository>();
-builder.Services.AddScoped<ISummaryCommandService, SummaryCommandService>();
-builder.Services.AddScoped<ISummaryQueryService, SummaryQueryService>();*/
+
 
 // Profiles Bounded Context Dependency Injection Configuration
 builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
 builder.Services.AddScoped<IProfileCommandService, ProfileCommandService>();
 builder.Services.AddScoped<IProfileQueryService, ProfileQueryService>();
 
-// TokenSettings Configuration
+// TokenSettings configuration
 builder.Services.Configure<TokenSettings>(builder.Configuration.GetSection("TokenSettings"));
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -173,23 +167,21 @@ builder.Services.AddScoped<IIamContextFacade, IamContextFacade>();
 
 var app = builder.Build();
 
-// Verify Database Objects are Created
+// Verify database objects are created
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     var context = services.GetRequiredService<AppDbContext>();
     //context.Database.EnsureCreated();
     
-    
-// Eliminar la base de datos si existe
+    // Eliminar la base de datos si existe
     context.Database.EnsureDeleted();
 
-// Crear la base de datos
+    // Crear la base de datos
     context.Database.EnsureCreated();
-    
 }
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -197,6 +189,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowSpecificOrigin");
 
 app.UseAuthorization();
 
