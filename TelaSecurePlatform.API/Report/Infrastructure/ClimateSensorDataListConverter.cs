@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+﻿/* System.Text.Json;
 using TelaSecurePlatform.API.Report.Domain.Model.Aggregates;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Newtonsoft.Json;
@@ -12,4 +12,4 @@ public class ClimateSensorDataListConverter : ValueConverter<List<ClimateSensorD
         v => JsonConvert.DeserializeObject<List<ClimateSensorData>>(v))
     {
     }
-}
+}*/

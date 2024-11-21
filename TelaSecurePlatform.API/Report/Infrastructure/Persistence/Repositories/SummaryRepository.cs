@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/*using Microsoft.EntityFrameworkCore;
 using TelaSecurePlatform.API.Report.Domain.Repositories;
 using TelaSecurePlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
 using TelaSecurePlatform.API.Shared.Infrastructure.Persistence.EFC.Repositories;
@@ -19,4 +19,4 @@ namespace TelaSecurePlatform.API.Report.Infrastructure.Persistence.Repositories
         public new async Task<IEnumerable<Report.Domain.Model.Aggregates.Summary>> ListAsync() =>
             await Context.Set<Report.Domain.Model.Aggregates.Summary>().ToListAsync();
     }
-}
+}*/

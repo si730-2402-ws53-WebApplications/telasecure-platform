@@ -1,4 +1,4 @@
-﻿using TelaSecurePlatform.API.Report.Domain.Model.Commands;
+﻿/*using TelaSecurePlatform.API.Report.Domain.Model.Commands;
 using TelaSecurePlatform.API.Report.Interfaces.REST.Resources;
 
 namespace TelaSecurePlatform.API.Report.Interfaces.REST.Transform;
@@ -9,4 +9,4 @@ public static class CreateSummaryCommandFromResourceAssembler
     {
         return new CreateSummaryCommand(resource.Id, resource.Date, resource.FabricsData, resource.EnviroDevicesData, resource.ClimateSensorsData);
     }
-}
+}*/

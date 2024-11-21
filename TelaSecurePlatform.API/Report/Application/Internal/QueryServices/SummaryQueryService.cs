@@ -1,4 +1,4 @@
-﻿using TelaSecurePlatform.API.Report.Domain.Model.Aggregates;
+﻿/*using TelaSecurePlatform.API.Report.Domain.Model.Aggregates;
 using TelaSecurePlatform.API.Report.Domain.Model.Queries;
 using TelaSecurePlatform.API.Report.Domain.Repositories;
 using TelaSecurePlatform.API.Report.Domain.Services;
@@ -16,4 +16,4 @@ public class SummaryQueryService(ISummaryRepository summaryRepository) : ISummar
     {
         return await summaryRepository.ListAsync();
     }
-}
+}*/

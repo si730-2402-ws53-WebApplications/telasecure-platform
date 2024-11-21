@@ -1,4 +1,4 @@
-﻿using System.Net.Mime;
+﻿/*using System.Net.Mime;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using TelaSecurePlatform.API.Report.Domain.Model.Commands;
@@ -82,4 +82,4 @@ public class SummariesController(
         var summaries = await summaryQueryService.Handle(getAllSummariesQuery);
         var summaryResources = summaries.Select(summary => SummaryResourceFromEntityAssembler.ToResourceFromEntity(summary));        return Ok(summaryResources);
     }
-}
+}*/

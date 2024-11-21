@@ -29,11 +29,11 @@ using TelaSecurePlatform.API.Profiles.Application.Internal.QueryServices;
 using TelaSecurePlatform.API.Profiles.Domain.Repositories;
 using TelaSecurePlatform.API.Profiles.Domain.Services;
 using TelaSecurePlatform.API.Profiles.Infrastructure.Persistence.EFC.Repositories;
-using TelaSecurePlatform.API.Report.Application.Internal.CommandServices;
+/*using TelaSecurePlatform.API.Report.Application.Internal.CommandServices;
 using TelaSecurePlatform.API.Report.Application.Internal.QueryServices;
 using TelaSecurePlatform.API.Report.Domain.Repositories;
 using TelaSecurePlatform.API.Report.Domain.Services;
-using TelaSecurePlatform.API.Report.Infrastructure.Persistence.Repositories;
+using TelaSecurePlatform.API.Report.Infrastructure.Persistence.Repositories;*/
 using TelaSecurePlatform.API.Shared.Domain.Repositories;
 using TelaSecurePlatform.API.Shared.Infrastructure.Interfaces.ASP.Configuration;
 using TelaSecurePlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
@@ -150,10 +150,10 @@ builder.Services.AddScoped<IEnvironmentDeviceRepository, EnvironmentDeviceReposi
 builder.Services.AddScoped<IEnvironmentDeviceCommandService, EnvironmentDeviceCommandService>();
 builder.Services.AddScoped<IEnvironmentDeviceQueryService, EnvironmentDeviceQueryService>();
 
-//report
+/*//report
 builder.Services.AddScoped<ISummaryRepository, SummaryRepository>();
 builder.Services.AddScoped<ISummaryCommandService, SummaryCommandService>();
-builder.Services.AddScoped<ISummaryQueryService, SummaryQueryService>();
+builder.Services.AddScoped<ISummaryQueryService, SummaryQueryService>();*/
 
 // Profiles Bounded Context Dependency Injection Configuration
 builder.Services.AddScoped<IProfileRepository, ProfileRepository>();

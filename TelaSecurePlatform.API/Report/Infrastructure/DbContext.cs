@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/*using Microsoft.EntityFrameworkCore;
 using TelaSecurePlatform.API.Report.Domain.Model.Aggregates;
 using Newtonsoft.Json;
 
@@ -19,4 +19,4 @@ public class YourDbContext : DbContext
                 v => JsonConvert.DeserializeObject<List<ClimateSensorData>>(v)
             );
     }
-}
+}*/

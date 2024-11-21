@@ -1,3 +1,3 @@
-﻿namespace TelaSecurePlatform.API.Report.Domain.Model.Commands;
+﻿/*namespace TelaSecurePlatform.API.Report.Domain.Model.Commands;
 
-public record DeleteSummaryCommand(int SummaryId);
+public record DeleteSummaryCommand(int SummaryId);*/

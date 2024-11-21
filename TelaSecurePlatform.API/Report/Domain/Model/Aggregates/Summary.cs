@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using Newtonsoft.Json;
 
-namespace TelaSecurePlatform.API.Report.Domain.Model.Aggregates;
+/*namespace TelaSecurePlatform.API.Report.Domain.Model.Aggregates;
 
 public class Summary
 {
@@ -29,4 +29,4 @@ public class Summary
         EnviroDevicesData = enviroDevicesData;
         ClimateSensorsData = climateSensorsData;
     }
-}
+}*/

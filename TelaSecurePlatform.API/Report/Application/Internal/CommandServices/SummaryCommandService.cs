@@ -1,4 +1,4 @@
-﻿using TelaSecurePlatform.API.Report.Domain.Model.Aggregates;
+﻿/*using TelaSecurePlatform.API.Report.Domain.Model.Aggregates;
 using TelaSecurePlatform.API.Report.Domain.Model.Commands;
 using TelaSecurePlatform.API.Report.Domain.Repositories;
 using TelaSecurePlatform.API.Shared.Domain.Repositories;
@@ -42,4 +42,4 @@ public class SummaryCommandService(
         await unitOfWork.CompleteAsync();
         return true;
     }
-}
+}*/

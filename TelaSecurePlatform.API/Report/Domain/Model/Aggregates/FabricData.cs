@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿/*using System.ComponentModel.DataAnnotations;
 
 namespace TelaSecurePlatform.API.Report.Domain.Model.Aggregates;
 
@@ -10,4 +10,4 @@ public class FabricData
     public string Name { get; set; } = string.Empty; 
 
     public int Quantity { get; set; }
-}
+}*/

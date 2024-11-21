@@ -1,3 +1,3 @@
-﻿namespace TelaSecurePlatform.API.Report.Domain.Model.Queries;
+﻿/*namespace TelaSecurePlatform.API.Report.Domain.Model.Queries;
 
-public record GetSummaryByIdQuery(int SummaryId);
+public record GetSummaryByIdQuery(int SummaryId);*/

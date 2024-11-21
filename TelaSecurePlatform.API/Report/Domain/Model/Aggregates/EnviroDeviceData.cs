@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿/*using System.ComponentModel.DataAnnotations;
 
 namespace TelaSecurePlatform.API.Report.Domain.Model.Aggregates;
 
@@ -11,4 +11,4 @@ public class EnviroDeviceData
 
     [MaxLength(100)] 
     public string Status { get; set; } = string.Empty; 
-}
+}*/

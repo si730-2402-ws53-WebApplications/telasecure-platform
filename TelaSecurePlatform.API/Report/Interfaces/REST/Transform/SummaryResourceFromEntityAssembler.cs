@@ -1,4 +1,4 @@
-﻿using TelaSecurePlatform.API.Report.Domain.Model.Aggregates;
+﻿/*using TelaSecurePlatform.API.Report.Domain.Model.Aggregates;
 using TelaSecurePlatform.API.Report.Interfaces.REST.Resources;
 
 namespace TelaSecurePlatform.API.Report.Interfaces.REST.Transform;
@@ -15,4 +15,4 @@ public static class SummaryResourceFromEntityAssembler
             entity.ClimateSensorsData
         );
     }
-}
+}*/
