@@ -16,4 +16,5 @@ TelasSecure Platform API Application, hecha con Microsoft C#, ASP.NET Core, Enti
 - Custom Object-Relational Mapping Naming Conventions.
 - MySQL Database
 - Domain-Driven Design
+- - Repository Pattern
 
