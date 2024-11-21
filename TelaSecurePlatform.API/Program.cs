@@ -33,7 +33,7 @@ using TelaSecurePlatform.API.Report.Application.Internal.CommandServices;
 using TelaSecurePlatform.API.Report.Application.Internal.QueryServices;
 using TelaSecurePlatform.API.Report.Domain.Repositories;
 using TelaSecurePlatform.API.Report.Domain.Services;
-using TelaSecurePlatform.API.Reports.Infrastructure.Persistence.Repositories;
+using TelaSecurePlatform.API.Report.Infrastructure.Persistence.Repositories;
 using TelaSecurePlatform.API.Shared.Domain.Repositories;
 using TelaSecurePlatform.API.Shared.Infrastructure.Interfaces.ASP.Configuration;
 using TelaSecurePlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration;

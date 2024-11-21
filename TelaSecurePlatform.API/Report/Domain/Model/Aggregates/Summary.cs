@@ -8,8 +8,9 @@ public class Summary
     public List<EnviroDeviceData> EnviroDevicesData { get; private set; }
     public List<ClimateSensorData> ClimateSensorsData { get; private set; }
 
-    public Summary(DateTime date, List<FabricData> fabricsData, List<EnviroDeviceData> enviroDevicesData, List<ClimateSensorData> climateSensorsData)
+    public Summary(int id, DateTime date, List<FabricData> fabricsData, List<EnviroDeviceData> enviroDevicesData, List<ClimateSensorData> climateSensorsData)
     {
+        Id = id;
         Date = date;
         FabricsData = fabricsData;
         EnviroDevicesData = enviroDevicesData;

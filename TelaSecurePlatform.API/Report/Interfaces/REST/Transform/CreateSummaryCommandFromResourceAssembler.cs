@@ -7,6 +7,6 @@ public static class CreateSummaryCommandFromResourceAssembler
 {
     public static CreateSummaryCommand ToCommandFromResource(CreateSummaryResource resource)
     {
-        return new CreateSummaryCommand(resource.Date, resource.FabricsData, resource.EnviroDevicesData, resource.ClimateSensorsData);
+        return new CreateSummaryCommand(resource.Id, resource.Date, resource.FabricsData, resource.EnviroDevicesData, resource.ClimateSensorsData);
     }
 }

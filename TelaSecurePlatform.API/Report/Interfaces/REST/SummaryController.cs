@@ -7,7 +7,7 @@ using TelaSecurePlatform.API.Report.Domain.Services;
 using TelaSecurePlatform.API.Report.Interfaces.REST.Resources;
 using TelaSecurePlatform.API.Report.Interfaces.REST.Transform;
 
-namespace TelaSecurePlatform.API.Summary.Interfaces.REST;
+namespace TelaSecurePlatform.API.Report.Interfaces.REST;
 
 [ApiController]
 [Route("api/v1/[controller]")]

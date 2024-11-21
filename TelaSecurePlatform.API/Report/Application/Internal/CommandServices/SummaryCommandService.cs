@@ -13,7 +13,7 @@ public class SummaryCommandService(
 {
     public async Task<Domain.Model.Aggregates.Summary?> Handle(CreateSummaryCommand command)
     {
-        var summary = new Domain.Model.Aggregates.Summary(command.Date, command.FabricsData, command.EnviroDevicesData, command.ClimateSensorsData);
+        var summary = new Domain.Model.Aggregates.Summary(command.Id, command.Date, command.FabricsData, command.EnviroDevicesData, command.ClimateSensorsData);
         await summaryRepository.AddAsync(summary);
         await unitOfWork.CompleteAsync();
         return summary;

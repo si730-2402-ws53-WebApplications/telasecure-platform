@@ -2,4 +2,4 @@
 
 namespace TelaSecurePlatform.API.Report.Domain.Model.Commands;
 
-public record CreateSummaryCommand(DateTime Date, List<FabricData> FabricsData, List<EnviroDeviceData> EnviroDevicesData, List<ClimateSensorData> ClimateSensorsData);
+public record CreateSummaryCommand(int Id, DateTime Date, List<FabricData> FabricsData, List<EnviroDeviceData> EnviroDevicesData, List<ClimateSensorData> ClimateSensorsData);

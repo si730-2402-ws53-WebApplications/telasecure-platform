@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TelaSecurePlatform.API.Report.Domain.Repositories;
-using TelaSecurePlatform.API.Shared.Infrastructure.Persistence.EFC.Repositories;
 using TelaSecurePlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
+using TelaSecurePlatform.API.Shared.Infrastructure.Persistence.EFC.Repositories;
 
-namespace TelaSecurePlatform.API.Reports.Infrastructure.Persistence.Repositories
+namespace TelaSecurePlatform.API.Report.Infrastructure.Persistence.Repositories
 {
     public class SummaryRepository : BaseRepository<Report.Domain.Model.Aggregates.Summary>, ISummaryRepository
     {

@@ -2,4 +2,4 @@
 
 namespace TelaSecurePlatform.API.Report.Interfaces.REST.Resources;
 
-public record CreateSummaryResource(DateTime Date, List<FabricData> FabricsData, List<EnviroDeviceData> EnviroDevicesData, List<ClimateSensorData> ClimateSensorsData);
+public record CreateSummaryResource(int Id, DateTime Date, List<FabricData> FabricsData, List<EnviroDeviceData> EnviroDevicesData, List<ClimateSensorData> ClimateSensorsData);
