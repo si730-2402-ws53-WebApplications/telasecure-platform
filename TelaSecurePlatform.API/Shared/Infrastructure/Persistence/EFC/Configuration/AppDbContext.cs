@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using TelaSecurePlatform.API.Facilities.Domain.Model.Aggregates;
 using TelaSecurePlatform.API.IAM.Domain.Model.Aggregates;
 using TelaSecurePlatform.API.Inventory.Domain.Model.Aggregates;
+using TelaSecurePlatform.API.Inventory.Domain.Model.Entities;
 using TelaSecurePlatform.API.Profiles.Domain.Model.Aggregates;
 using TelaSecurePlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration.Extensions;
 
@@ -30,6 +31,22 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
         builder.Entity<Fabric>().Property(f => f.CategoryId).IsRequired();
         builder.Entity<Fabric>().Property(f => f.Quantity).IsRequired();
         
+        builder.Entity<Category>().HasKey(c => c.Id);
+        builder.Entity<Category>().Property(c => c.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<Category>().Property(c => c.Name).IsRequired().HasMaxLength(30);
+        
+        // Configuración de la entidad Suggestion
+        builder.Entity<Suggestion>().HasKey(s => s.Id);
+        builder.Entity<Suggestion>().Property(s => s.Id).IsRequired().ValueGeneratedOnAdd();
+        builder.Entity<Suggestion>().Property(s => s.description).IsRequired().HasMaxLength(255);
+        builder.Entity<Suggestion>().Property(s => s.CategoryId).IsRequired();
+  
+        // Configuración de la relación uno a muchos entre Category y Suggestion
+        builder.Entity<Category>()
+            .HasMany(c => c.Suggestions)
+            .WithOne(s => s.Category)
+            .HasForeignKey(s => s.CategoryId);
+
         
         /*
         builder.Entity<Fabric>().Property(f => f.Status).IsRequired();

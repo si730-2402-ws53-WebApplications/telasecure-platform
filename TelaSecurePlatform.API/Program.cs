@@ -148,6 +148,9 @@ builder.Services.AddScoped<IEnvironmentDeviceRepository, EnvironmentDeviceReposi
 builder.Services.AddScoped<IEnvironmentDeviceCommandService, EnvironmentDeviceCommandService>();
 builder.Services.AddScoped<IEnvironmentDeviceQueryService, EnvironmentDeviceQueryService>();
 
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ICategoryCommandService, CategoryCommandService>();
+builder.Services.AddScoped<ICategoryQueryService, CategoryQueryService>();
 
 
 // Profiles Bounded Context Dependency Injection Configuration
